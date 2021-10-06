@@ -25,7 +25,7 @@ class ScoringBaseBallTest {
     void scoringBalls() {
         ScoringBaseBall scoringBaseBall = new ScoringBaseBall(answer);
 
-        assertThat(scoringBaseBall.scoringBallCount(userBaseBallNumbers)).isEqualTo(2);
+        assertThat(scoringBaseBall.scoringBallCount(userBaseBallNumbers)).isEqualTo(1);
     }
 
     @Test

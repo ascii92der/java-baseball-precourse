@@ -23,7 +23,9 @@ public class BaseBallNumber {
     }
 
     public static BaseBallNumber generateBaseBallNumber() {
-        return new BaseBallNumber(Randoms.pickNumberInRange(BALL_NUMBER_MINIMUM, BALL_NUMBER_MAXIMUM));
+        int a = Randoms.pickNumberInRange(BALL_NUMBER_MINIMUM, BALL_NUMBER_MAXIMUM);
+        System.out.println(a);
+        return new BaseBallNumber(a);
     }
 
     @Override

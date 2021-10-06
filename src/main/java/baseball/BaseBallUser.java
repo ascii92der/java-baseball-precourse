@@ -18,4 +18,8 @@ public class BaseBallUser {
 
         this.baseBallNumbers = new BaseBallNumbers(baseBallNumberList);
     }
+
+    public BaseBallNumbers myNumbers() {
+        return baseBallNumbers;
+    }
 }
