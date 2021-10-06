@@ -1,5 +1,7 @@
 package baseball;
 
+import nextstep.utils.Randoms;
+
 import java.util.Objects;
 
 public class BaseBallNumber {
@@ -18,6 +20,10 @@ public class BaseBallNumber {
 
     public boolean isValidBaseBallNumber() {
         return (ballNumber >= BALL_NUMBER_MINIMUM && ballNumber <= BALL_NUMBER_MAXIMUM);
+    }
+
+    public static BaseBallNumber generateBaseBallNumber() {
+        return new BaseBallNumber(Randoms.pickNumberInRange(BALL_NUMBER_MINIMUM, BALL_NUMBER_MAXIMUM));
     }
 
     @Override

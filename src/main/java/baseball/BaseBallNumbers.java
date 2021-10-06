@@ -1,5 +1,6 @@
 package baseball;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -50,4 +51,17 @@ public class BaseBallNumbers {
         return strikeCount;
     }
 
+    public static BaseBallNumbers generateBaseBallNumbers() {
+        List<BaseBallNumber> baseBallNumberList = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            baseBallNumberList.add(BaseBallNumber.generateBaseBallNumber());
+        }
+        BaseBallNumbers baseBallNumbers;
+        try {
+            baseBallNumbers = new BaseBallNumbers(baseBallNumberList);
+        } catch (IllegalArgumentException e) {
+            baseBallNumbers = BaseBallNumbers.generateBaseBallNumbers();
+        }
+        return baseBallNumbers;
+    }
 }
