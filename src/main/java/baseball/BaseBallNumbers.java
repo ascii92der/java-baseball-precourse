@@ -29,4 +29,25 @@ public class BaseBallNumbers {
     private boolean validBaseBallNumbersDuplication() {
         return (new HashSet<>(baseBallNumberList)).size() == 3;
     }
+
+    public int matchBalls(BaseBallNumbers baseBallNumbers) {
+        int ballCount = 0;
+        for (int i = 0; i < baseBallNumbers.baseBallNumberList.size(); i++) {
+            ballCount = this.baseBallNumberList.contains(baseBallNumbers.baseBallNumberList.get(i)) ? ballCount + 1 : ballCount;
+        }
+        return ballCount;
+    }
+
+    public int matchStrikes(BaseBallNumbers baseBallNumbers) {
+        if (matchBalls(baseBallNumbers) == 0) {
+            return 0;
+        }
+
+        int strikeCount = 0;
+        for (int i = 0; i < baseBallNumbers.baseBallNumberList.size(); i++) {
+            strikeCount = this.baseBallNumberList.get(i).equals(baseBallNumbers.baseBallNumberList.get(i)) ? strikeCount + 1 : strikeCount;
+        }
+        return strikeCount;
+    }
+
 }
