@@ -1,5 +1,7 @@
 package baseball;
 
+import java.util.Objects;
+
 public class BaseBallNumber {
     public static final int BALL_NUMBER_MINIMUM = 1;
     public static final int BALL_NUMBER_MAXIMUM = 9;
@@ -7,13 +9,27 @@ public class BaseBallNumber {
     private final int ballNumber;
 
     public BaseBallNumber(int ballNumber) {
-        if(!isValidBaseBallNumber()){
+        this.ballNumber = ballNumber;
+
+        if (!isValidBaseBallNumber()) {
             throw new IllegalArgumentException(INVALID_RANGE_BALL_NUMBER);
         }
-        this.ballNumber = ballNumber;
     }
 
     public boolean isValidBaseBallNumber() {
-       return ballNumber >= BALL_NUMBER_MINIMUM && ballNumber <= BALL_NUMBER_MAXIMUM;
+        return (ballNumber >= BALL_NUMBER_MINIMUM && ballNumber <= BALL_NUMBER_MAXIMUM);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BaseBallNumber that = (BaseBallNumber) o;
+        return ballNumber == that.ballNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ballNumber);
     }
 }
