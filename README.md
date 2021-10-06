@@ -7,7 +7,7 @@
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
 
 ## 기능 요구사항
-- [ ] 1-9 사이의 랜덤한 수
+- [x] 1-9 사이의 랜덤한 수
 - [ ] 서로 다른 3자리 수
 - [ ] 컴퓨터가 정답 생성
 - [ ] 3자리 숫자 입력 받음
